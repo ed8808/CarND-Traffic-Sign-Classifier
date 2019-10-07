@@ -20,11 +20,11 @@ The goals / steps of this project are the following:
 [image1]: ./examples/dataset_stat.jpg "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/image1.jpg "Traffic Sign 1"
-[image5]: ./examples/image2.jpg "Traffic Sign 2"
-[image6]: ./examples/image3.jpg "Traffic Sign 3"
-[image7]: ./examples/image4.jpg "Traffic Sign 4"
-[image8]: ./examples/image5.jpg "Traffic Sign 5"
+[image4]: ./examples/image1.jpg "Stop Sign"
+[image5]: ./examples/image2.jpg "Speed limit (70km/h)"
+[image6]: ./examples/image3.jpg "Priority road"
+[image7]: ./examples/image4.jpg "Turn left ahead"
+[image8]: ./examples/image5.jpg "Right-of-way at the next intersection"
 [image9]: ./examples/lenet.png "LeNet CNN framework"
 
 ## Rubric Points
@@ -70,15 +70,20 @@ My final model consisted of the following layers:
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
+| Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x64 	|
 | RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
+| Max pooling	      	| 2x2 stride,  outputs 14x14x6 				|
+| Convolution 5x5	    | 1x1 stride, valid padding, outputs 10x10x16      									|
+| RELU					|												|
+| Max pooling	      	| 2x2 stride,  outputs 5x5x16 				|
+| Flatten  | outputs 400 |
+| Fully connected		| outputs 120				|
+| RELU					|												|
+| Fully connected		| outputs 84				|
+| RELU					|												|
+| Fully connected		| outputs 43				|
 | Softmax				| etc.        									|
-|						|												|
-|						|												|
- 
+
 ![alt text][image9]
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
@@ -88,9 +93,9 @@ To train the model, I used an ....
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of 91.4%
-* validation set accuracy of 91.4%
-* test set accuracy of 90.7%
+* training set accuracy of 89.2%
+* validation set accuracy of 89.2%
+* test set accuracy of 89.5%
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
@@ -123,30 +128,65 @@ Here are the results of the prediction:
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Speed limit (70km/h)     			|  			Speed limit (70km/h)							|
+| Priority road		| Priority road				|
+| Turn left ahead	      		| 	Turn left ahead				 				|
+| Right-of-way at the next intersection		| No passing      							|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 60%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. 
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+For the 1st image, the model is almost 100% sure that this is a stop sign (probability of 1), and the image does contain a stop sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| ~ 1         			| Stop sign   									| 
+| ~ 0     				| No entry 										|
+| ~ 0					| Priority road											|
+| ~ 0	      			| No Passing					 				|
+| ~ 0				    | Road work      							|
 
 
-For the second image ... 
+For the 2nd image, the model is almost 100% sure that this is a speed limit of 70km/h (probability of 1). The top five soft max probabilities were
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| ~ 1         			| Speed limit (70km/h)   									| 
+| ~ 0     				| Speed limit (30km/h) 										|
+| ~ 0					| Speed limit (80km/h)											|
+| ~ 0	      			| Speed limit (100km/h)				 				|
+| ~ 0				    | No passing for vehicles over 3.5 metric tons      							|
+
+For the 3rd image, the model is almost 100% sure that this is a No passing for vehicles over 3.5 metric tons
+(probability of 1). The top five soft max probabilities were
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| ~ 1         			| No passing for vehicles over 3.5 metric tons   									| 
+| ~ 0     				| Priority road										|
+| ~ 0					| Slippery road											|
+| ~ 0	      			| Road narrows on the right			 				|
+| ~ 0				    | Beware of ice/snow      							|
+
+For the 4th image, the model is almost 100% sure that this is a End of all speed and passing limits (probability of 1). The top five soft max probabilities were
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| ~ 1         			| End of all speed and passing limits   									| 
+| ~ 0     				| Turn right ahead 										|
+| ~ 0					| Right-of-way at the next intersection											|
+| ~ 0	      			| Children crossing			 				|
+| ~ 0				    | Keep left      							|
+
+For the 5th image, the model is 0.82 sure that this is a Speed limit (100km/h) (probability of 0.82) but the correct sign is actually the No passing.  The top five soft max probabilities were
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| ~ 0.82         			| Speed limit (100km/h)   									| 
+| ~ 0.18     				| Double curve 										|
+| ~ 0					| No entry											|
+| ~ 0	      			| Children crossing			 				|
+| ~ 0				    | Turn right ahead      							|
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
