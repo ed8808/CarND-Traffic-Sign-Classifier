@@ -20,11 +20,11 @@ The goals / steps of this project are the following:
 [image1]: ./examples/dataset_stat.jpg "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/image1.png "Traffic Sign 1"
-[image5]: ./examples/image2.png "Traffic Sign 2"
-[image6]: ./examples/image3.png "Traffic Sign 3"
-[image7]: ./examples/image4.png "Traffic Sign 4"
-[image8]: ./examples/image5.png "Traffic Sign 5"
+[image4]: ./examples/image1.jpg "Traffic Sign 1"
+[image5]: ./examples/image2.jpg "Traffic Sign 2"
+[image6]: ./examples/image3.jpg "Traffic Sign 3"
+[image7]: ./examples/image4.jpg "Traffic Sign 4"
+[image8]: ./examples/image5.jpg "Traffic Sign 5"
 [image9]: ./examples/lenet.png "LeNet CNN framework"
 
 ## Rubric Points
