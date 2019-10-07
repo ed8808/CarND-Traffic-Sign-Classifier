@@ -131,7 +131,7 @@ Here are the results of the prediction:
 | Speed limit (70km/h)     			|  			Speed limit (70km/h)							|
 | Priority road		| Priority road				|
 | Turn left ahead	      		| 	Turn left ahead				 				|
-| Pedestrians		| No passing      							|
+| Pedestrians		| Speed limit (100km/h)      							|
 
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. 
@@ -152,6 +152,7 @@ For the 1st image, the model is almost 100% sure that this is a stop sign (proba
 
 
 For the 2nd image, the model is almost 100% sure that this is a speed limit of 70km/h (probability of 1). The top five soft max probabilities were
+
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 1         			| Speed limit (70km/h)   									| 
@@ -162,6 +163,7 @@ For the 2nd image, the model is almost 100% sure that this is a speed limit of 7
 
 For the 3rd image, the model is almost 100% sure that this is a No passing for vehicles over 3.5 metric tons
 (probability of 1). The top five soft max probabilities were
+
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 1         			| No passing for vehicles over 3.5 metric tons   									| 
@@ -171,6 +173,7 @@ For the 3rd image, the model is almost 100% sure that this is a No passing for v
 | 0				    | Beware of ice/snow      							|
 
 For the 4th image, the model is almost 100% sure that this is a End of all speed and passing limits (probability of 1). The top five soft max probabilities were
+
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 1         			| End of all speed and passing limits   									| 
@@ -180,6 +183,7 @@ For the 4th image, the model is almost 100% sure that this is a End of all speed
 | 0				    | Keep left      							|
 
 For the 5th image, the model is 0.82 sure that this is a Speed limit (100km/h) (probability of 0.82) but the correct sign is actually the Pedestrians.  The top five soft max probabilities were
+
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 0.82         			| Speed limit (100km/h)   									| 
