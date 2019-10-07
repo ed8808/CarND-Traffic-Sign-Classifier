@@ -131,7 +131,7 @@ Here are the results of the prediction:
 | Speed limit (70km/h)     			|  			Speed limit (70km/h)							|
 | Priority road		| Priority road				|
 | Turn left ahead	      		| 	Turn left ahead				 				|
-| Right-of-way at the next intersection		| No passing      							|
+| Pedestrians		| No passing      							|
 
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. 
@@ -144,49 +144,49 @@ For the 1st image, the model is almost 100% sure that this is a stop sign (proba
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| ~ 1         			| Stop sign   									| 
-| ~ 0     				| No entry 										|
-| ~ 0					| Priority road											|
-| ~ 0	      			| No Passing					 				|
-| ~ 0				    | Road work      							|
+| 1         			| Stop sign   									| 
+| 0     				| No entry 										|
+| 0					| Priority road											|
+| 0	      			| No Passing					 				|
+| 0				    | Road work      							|
 
 
 For the 2nd image, the model is almost 100% sure that this is a speed limit of 70km/h (probability of 1). The top five soft max probabilities were
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| ~ 1         			| Speed limit (70km/h)   									| 
-| ~ 0     				| Speed limit (30km/h) 										|
-| ~ 0					| Speed limit (80km/h)											|
-| ~ 0	      			| Speed limit (100km/h)				 				|
-| ~ 0				    | No passing for vehicles over 3.5 metric tons      							|
+| 1         			| Speed limit (70km/h)   									| 
+| 0     				| Speed limit (30km/h) 										|
+| 0					| Speed limit (80km/h)											|
+| 0	      			| Speed limit (100km/h)				 				|
+| 0				    | No passing for vehicles over 3.5 metric tons      							|
 
 For the 3rd image, the model is almost 100% sure that this is a No passing for vehicles over 3.5 metric tons
 (probability of 1). The top five soft max probabilities were
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| ~ 1         			| No passing for vehicles over 3.5 metric tons   									| 
-| ~ 0     				| Priority road										|
-| ~ 0					| Slippery road											|
-| ~ 0	      			| Road narrows on the right			 				|
-| ~ 0				    | Beware of ice/snow      							|
+| 1         			| No passing for vehicles over 3.5 metric tons   									| 
+| 0     				| Priority road										|
+| 0					| Slippery road											|
+| 0	      			| Road narrows on the right			 				|
+| 0				    | Beware of ice/snow      							|
 
 For the 4th image, the model is almost 100% sure that this is a End of all speed and passing limits (probability of 1). The top five soft max probabilities were
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| ~ 1         			| End of all speed and passing limits   									| 
-| ~ 0     				| Turn right ahead 										|
-| ~ 0					| Right-of-way at the next intersection											|
-| ~ 0	      			| Children crossing			 				|
-| ~ 0				    | Keep left      							|
+| 1         			| End of all speed and passing limits   									| 
+| 0     				| Turn right ahead 										|
+| 0					| Right-of-way at the next intersection											|
+| 0	      			| Children crossing			 				|
+| 0				    | Keep left      							|
 
-For the 5th image, the model is 0.82 sure that this is a Speed limit (100km/h) (probability of 0.82) but the correct sign is actually the No passing.  The top five soft max probabilities were
+For the 5th image, the model is 0.82 sure that this is a Speed limit (100km/h) (probability of 0.82) but the correct sign is actually the Pedestrians.  The top five soft max probabilities were
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| ~ 0.82         			| Speed limit (100km/h)   									| 
-| ~ 0.18     				| Double curve 										|
-| ~ 0					| No entry											|
-| ~ 0	      			| Children crossing			 				|
-| ~ 0				    | Turn right ahead      							|
+| 0.82         			| Speed limit (100km/h)   									| 
+| 0.18     				| Double curve 										|
+| 0					| No entry											|
+| 0	      			| Children crossing			 				|
+| 0				    | Turn right ahead      							|
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
