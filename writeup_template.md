@@ -82,7 +82,6 @@ My final model consisted of the following layers:
 | Fully connected		| outputs 84				|
 | RELU					|												|
 | Fully connected		| outputs 43				|
-| Softmax				| etc.        									|
 
 ![alt text][image9]
 
@@ -98,7 +97,10 @@ My final model results were:
 * test set accuracy of 89.5%
 
 If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
+* What was the first architecture that was tried and why was it chosen? 
+
+The original LeNet CNN framework was chosen from LeNet lab session as a ground reference.
+
 * What were some problems with the initial architecture?
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
 * Which parameters were tuned? How were they adjusted and why?
