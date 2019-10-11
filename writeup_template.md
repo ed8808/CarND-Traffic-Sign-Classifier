@@ -17,7 +17,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/dataset_stat.jpg "Visualization"
+[image1]: ./examples/dataset_stat.png "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
 [image4]: ./examples/image1.jpg "Stop Sign"
@@ -26,6 +26,8 @@ The goals / steps of this project are the following:
 [image7]: ./examples/image4.jpg "Turn left ahead"
 [image8]: ./examples/image5.jpg "Roundabout mandatory"
 [image9]: ./examples/lenet.png "LeNet CNN framework"
+[image10]: ./examples/classes_overview.png "Classes Overview"
+
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -56,6 +58,8 @@ signs data set:
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
 
 ![alt text][image1]
+![alt text][image10]
+
 
 ### Design and Test a Model Architecture
 
